@@ -57,6 +57,7 @@
 * **RAG**: 자체 구축 로컬 RAG
 
 ## 📂 프로젝트 구조
+```
 ├── models/
 │   └── A.X-4.0-Light-Q4_K_M.gguf
 ├── main.py                # 챗봇 메인 실행 파일, 질의 유형 분류
@@ -64,6 +65,7 @@
 ├── general_questions.py   # 일반 법령 질문 파이프라인 모듈
 ├── retrieve.py            # (추가 예정) RAG 벡터 검색 모듈
 └── requirements.txt
+```
 
 ## ⚙️ 설치 및 실행 방법
 
