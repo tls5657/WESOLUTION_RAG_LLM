@@ -56,14 +56,36 @@
 * **Embedding**: `dragonkue/snowflake-arctic-embed-l-v2.0-ko`
 * **RAG**: 자체 구축 로컬 RAG
 
+## 💾 데이터 준비 및 RAG 구성
+이 프로젝트는 효과적인 RAG를 위해 사전에 법령 데이터를 처리하고 벡터화하는 과정을 거칩니다.
+
+**데이터 처리 및 청크 생성**: 법령 원본 텍스트 파일들을 파싱하여, RAG 검색에 용이한 형태로 분할(청크)하고 .pkl 파일로 저장합니다. 이 파일들은 각 법령의 텍스트와 메타데이터를 담고 있습니다.
+
+**임베딩 및 인덱싱**: snowflake-arctic-embed 모델을 사용하여 .pkl 파일의 텍스트 청크를 고차원 벡터로 변환합니다. 이후 faiss 라이브러리를 활용하여 이 벡터들을 빠르게 검색할 수 있는 효율적인 인덱스(law_index*.faiss 파일)를 구축합니다.
+
+
 ## 📂 프로젝트 구조
 ```
 ├── models/
 │   └── A.X-4.0-Light-Q4_K_M.gguf
+│   └── snowflake-arctic-embed-l-v2.0-ko
+├── data/
+│   └── 산업안전보건기준에관한규칙.pkl
+│   └── 산업안전보건법.pkl
+│   └── 항만법.pkl
+│   └── 해운법.pkl
+│   └── 중대재해처벌법.pkl
+│   └── 산업안전보건법시행령.pkl
+│   └── law_index1.faiss
+│   └── law_index2.faiss
+│   └── law_index3.faiss
+│   └── law_index4.faiss
+│   └── law_index5.faiss
+│   └── law_index6.faiss
 ├── main.py                # 챗봇 메인 실행 파일, 질의 유형 분류
 ├── risk_assessment.py     # 위험성평가 파이프라인 모듈
 ├── general_questions.py   # 일반 법령 질문 파이프라인 모듈
-├── retrieve.py            # (추가 예정) RAG 벡터 검색 모듈
+├── retrieve.py            # RAG 벡터 검색 모듈
 └── requirements.txt
 ```
 
