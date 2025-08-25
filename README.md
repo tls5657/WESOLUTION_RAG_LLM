@@ -1,0 +1,2 @@
+# WESOLUTION_RAG_LLM
+안전 관련 법령에 대한 RAG LLM
