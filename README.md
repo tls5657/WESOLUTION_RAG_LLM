@@ -112,9 +112,9 @@ integrated_server.py는 RAG 챗봇 시스템을 웹에서 직접 사용할 수 �
 ### 1. 모델 다운로드
 
 * **LLM (SKT A.X-4.0-Light)**
-    * [Mungert/A.X-4.0-Light-GGUF](https://huggingface.co/Mungert/A.X-4.0-Light-GGUF)에서 `A.X-4.0-Light-Q4_K_M.gguf` 파일을 다운로드하여 `models/` 폴더에 저장합니다.
+    * [Mungert/A.X-4.0-Light-GGUF](https://huggingface.co/Mungert/A.X-4.0-Light-GGUF)에서 `Q4_K_M.gguf` 파일을 다운로드하여 `models/` 폴더에 저장합니다.
 * **Embedding (Ko-Arctic-Embed)**
-    * [dragonkue/snowflake-arctic-embed-l-v2.0-ko](https://huggingface.co/dragonkue/snowflake-arctic-embed-l-v2.0-ko) 모델을 다운로드하여 프로젝트 폴더에 저장합니다.
+    * [dragonkue/snowflake-arctic-embed-l-v2.0-ko](https://huggingface.co/dragonkue/snowflake-arctic-embed-l-v2.0-ko) 모델을 다운로드하여 `models/` 폴더에 저장합니다.
 
 ### 2. 의존성 설치
 pip install -r requirements.txt
